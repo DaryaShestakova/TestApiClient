@@ -1,0 +1,156 @@
+2021-40-02 14:40:28.328 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-48-02 14:48:27.725 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-48-02 14:48:38.853 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Sam","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-49-02 14:49:25.061 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-56-02 14:56:03.878 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-58-02 14:58:16.812 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Sam","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-59-02 14:59:21.147 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Sam","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-46-02 17:46:28.757 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-37-02 18:37:54.537 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-38-02 18:38:37.061 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-39-03 15:39:52.942 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-40-03 15:40:24.203 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-42-03 15:42:25.580 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-43-03 15:43:03.420 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-45-03 15:45:43.957 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-46-03 15:46:58.462 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-47-03 15:47:38.658 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":10,"name":"mops"},"name":"doggie","photoUrls":["string"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-47-03 15:47:49.238 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-47-03 15:47:57.343 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-49-03 15:49:42.936 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-01-03 16:01:03.553 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-01-03 16:01:56.227 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-02-03 16:02:36.908 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-02-03 16:02:46.148 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-06-03 16:06:07.649 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-10-03 16:10:21.550 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-12-03 16:12:06.859 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-14-03 16:14:44.314 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-16-03 16:16:58.406 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-18-03 16:18:05.717 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-18-03 16:18:40.047 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-18-03 16:18:46.453 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-18-03 16:18:52.032 [main] INFO  apiClients.HttpApiClient - <html>
+<head><title>302 Found</title></head>
+<body>
+<center><h1>302 Found</h1></center>
+</body>
+</html>
+
+2021-20-03 16:20:31.459 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Sam","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-20-03 16:20:39.264 [main] INFO  apiClients.HttpApiClient - {"code":200,"type":"unknown","message":"10"}
+2021-21-03 16:21:50.339 [main] INFO  apiClients.HttpApiClient - <?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiResponse><message>null for uri: http://petstore.swagger.io/v2//pet</message><type>unknown</type></apiResponse>
+2021-22-03 16:22:18.879 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-26-05 10:26:27.453 [main] INFO  apiClients.HttpApiClient - 
+2021-26-05 10:26:39.696 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-26-05 10:26:45.847 [main] INFO  apiClients.HttpApiClient - {"code":200,"type":"unknown","message":"10"}
+2021-54-05 10:54:55.740 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-58-05 10:58:24.539 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-01-05 11:01:16 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-04-05 11:03:49 [main] INFO  apiClients.HttpApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-04-05 11:04:51 [main] INFO  apiClients.RestAssuredApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-04-05 11:05:01 [main] INFO  apiClients.RestAssuredApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
+2021-04-05 11:13:17 [main] INFO  apiClients.RestAssuredApiClient - <?xml version="1.0" encoding="UTF-8" standalone="yes"?><apiResponse><type>unknown</type></apiResponse>
+2021-04-05 11:13:44 [main] INFO  apiClients.RestAssuredApiClient - {"id":10,"category":{"id":1,"name":"mops"},"name":"Bob","photoUrls":["someUrl"],"tags":[{"id":0,"name":"string"}],"status":"available"}
