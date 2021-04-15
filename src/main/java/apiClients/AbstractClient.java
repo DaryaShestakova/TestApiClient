@@ -7,7 +7,8 @@ import java.util.Map;
 
 public abstract class AbstractClient implements BaseApiClient{
     @Override
-    public <T> BaseRequest post(String url, Map<String, String> paths, Map<String, String> queries, Map<String, String> headers, T jsonObject, Class<T> clazz){
+    public <T, K> BaseRequest post(String url, Map<String, String> paths, Map<String, String> queries, Map<String,
+            String> headers, T jsonObject, Class<K> clazz){
         Object request = buildRequest(url, paths, queries, headers, jsonObject);
         return doRequest(request, Method.POST, clazz);
     }
@@ -19,7 +20,8 @@ public abstract class AbstractClient implements BaseApiClient{
     }
 
     @Override
-    public <T> BaseRequest put(String url, Map<String, String> paths, Map<String, String> queries, Map<String, String> headers, T jsonObject, Class<T> clazz){
+    public <T, K> BaseRequest put(String url, Map<String, String> paths, Map<String, String> queries,
+                                  Map<String, String> headers, T jsonObject, Class<K> clazz){
         Object request = buildRequest(url, paths, queries, headers, jsonObject);
         return doRequest(request, Method.PUT, clazz);
     }
