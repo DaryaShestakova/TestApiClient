@@ -110,13 +110,13 @@ public class HttpApiClient extends AbstractClient{
     }
 
     static class JsonObject {
-        static HttpRequest.BodyPublisher jsonObject;
+        private static HttpRequest.BodyPublisher jsonObject;
 
-        public static HttpRequest.BodyPublisher getJsonObject() {
+        static HttpRequest.BodyPublisher getJsonObject() {
             return jsonObject;
         }
 
-        public static void setJsonObject(HttpRequest.BodyPublisher jsonObject) {
+        static void setJsonObject(HttpRequest.BodyPublisher jsonObject) {
             JsonObject.jsonObject = jsonObject;
         }
     }
