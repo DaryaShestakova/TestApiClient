@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.File;
 import java.util.Map;
 
-@SpringBootTest(classes = ServerProperties.class)
+@SpringBootTest(classes = ApiProperties.class)
 public class BaseTest {
 
     public static final File FILE_TO_ADD_NEW_PET = new File(Constants.JSON_NEW_PET);
@@ -18,31 +18,31 @@ public class BaseTest {
     public BaseApiClient baseApiClient;
 
     public Map<String, String> getPathForPostAndPut() {
-        return serverProperties.getValuesForPostAndPut();
+        return ApiProperties.getValuesForPostAndPut();
     }
 
     public Map<String, String> getPathForGetAndDelete() {
-        return serverProperties.getValuesForGetAndDelete();
+        return ApiProperties.getValuesForGetAndDelete();
     }
 
     public Map<String, String> getHeaders() {
-        return serverProperties.getHeaders();
+        return ApiProperties.getHeaders();
     }
 
     public String getBaseUrl() {
-        return serverProperties.getBaseUrl();
+        return ApiProperties.getBaseUrl();
     }
 
     public String getCommandPath() {
-        return serverProperties.getPaths().get("command");
+        return ApiProperties.getPaths().get("command");
     }
 
     public String getIdPath() {
-        return serverProperties.getPaths().get("id");
+        return ApiProperties.getPaths().get("id");
     }
 
     @Autowired
-    private ServerProperties serverProperties;
+    private ApiProperties ApiProperties;
 
     @BeforeEach
     public void before() {

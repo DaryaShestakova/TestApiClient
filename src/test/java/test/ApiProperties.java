@@ -11,7 +11,7 @@ import java.util.Map;
 @Configuration
 @ConfigurationProperties(prefix = "configuration")
 @EnableConfigurationProperties
-public class ServerProperties {
+public class ApiProperties {
 
     private String baseUrl;
     private Map<String, String> paths;
