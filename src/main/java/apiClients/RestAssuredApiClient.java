@@ -7,16 +7,18 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.Header;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.apache.commons.lang3.StringUtils;
+import lombok.SneakyThrows;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import parser.JsonParser;
 
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
-public class RestAssuredApiClient extends AbstractClient{
+public class RestAssuredApiClient extends AbstractClient {
 
     private static Logger logger = LogManager.getLogger();
 
@@ -30,46 +32,56 @@ public class RestAssuredApiClient extends AbstractClient{
     }
 
 
-    public RequestSpecification createSpecification (String url, Map<String, String> paths, Map<String,
-            String> queries, Map<String, String> headers, Object jsonObject){
+    public RequestSpecification createSpecification(String url, Map<String, String> paths, Map<String,
+            String> queries, Map<String, String> headers, Object jsonObject) {
         RequestSpecBuilder spec = new RequestSpecBuilder();
         createUrl(spec, url, paths, queries);
         buildEntity(spec, headers, jsonObject);
         return spec.build();
     }
 
-    public void createUrl (RequestSpecBuilder spec, String url, Map<String, String> paths, Map<String, String> queries){
-        String baseURL = StringUtils.substringBefore(url, "/{");
-        String endpoint = StringUtils.substringAfter(url,"io/");
-            spec.setBaseUri(baseURL)
+    @SneakyThrows
+    public void createUrl(RequestSpecBuilder spec, String url, Map<String, String> paths, Map<String, String> queries) {
+        String baseURL = getStringByRegex(url, "^https\\:\\/\\/.+?\\/");
+        String endpoint = getStringByRegex(url, "\\{.*$");
+        spec.setBaseUri(baseURL)
                 .setBasePath(endpoint);
         if (paths != null) {
             spec.addPathParams(paths);
         }
-        if (queries != null){
+        if (queries != null) {
             spec.addQueryParams(queries);
         }
     }
 
-    public void buildEntity (RequestSpecBuilder spec, Map<String, String> headers, Object jsonObject){
-        if (headers != null){
+    public String getStringByRegex(String text, String regex) {
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        return matcher.find() ? matcher.group(0) : null;
+    }
+
+    public void buildEntity(RequestSpecBuilder spec, Map<String, String> headers, Object jsonObject) {
+        if (headers != null) {
             spec.addHeaders(headers)
                     .and();
         }
-        if(jsonObject != null){
+        if (jsonObject != null) {
             spec.setBody(JsonParser.parseToJson(jsonObject));
         }
     }
 
     @Override
     public <T> BaseRequest doRequest(Object request, Method method, Class<T> clazz) {
-        RequestSpecification specification = (RequestSpecification) request;
+        RequestSpecification specification = null;
+        if (request instanceof RequestSpecification) {
+            specification = (RequestSpecification) request;
+        }
         Response restAssuredResponse = buildResponse(specification, method);
 
         return deserializeObject(restAssuredResponse, clazz);
     }
 
-    public <T> BaseRequest deserializeObject(Response restAssuredResponse, Class<T> clazz){
+    public <T> BaseRequest deserializeObject(Response restAssuredResponse, Class<T> clazz) {
         int statusCode = restAssuredResponse.getStatusCode();
         List<Header> headers = restAssuredResponse.getHeaders().asList();
         String jsonFromResponse = restAssuredResponse.asString();
@@ -80,9 +92,9 @@ public class RestAssuredApiClient extends AbstractClient{
     }
 
 
-    public Response buildResponse(RequestSpecification specification, Method method){
+    public Response buildResponse(RequestSpecification specification, Method method) {
         Response response;
-        switch (method){
+        switch (method) {
             case POST:
                 response = specification.post();
                 break;
@@ -100,5 +112,4 @@ public class RestAssuredApiClient extends AbstractClient{
         }
         return response;
     }
-
 }

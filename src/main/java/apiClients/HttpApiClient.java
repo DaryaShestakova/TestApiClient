@@ -2,6 +2,8 @@ package apiClients;
 
 import constants.Method;
 import entity.BaseRequest;
+import lombok.Getter;
+import lombok.Setter;
 import lombok.SneakyThrows;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.logging.log4j.LogManager;
@@ -16,13 +18,13 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static apiClients.HttpApiClient.JsonObject.getJsonObject;
 import static parser.JsonParser.parseFromJson;
 import static parser.JsonParser.parseToJson;
 
-public class HttpApiClient extends AbstractClient{
+public class HttpApiClient extends AbstractClient {
 
     private static Logger logger = LogManager.getLogger();
+    ResponseEntity responseEntity = new ResponseEntity();
 
     @SneakyThrows
     @Override
@@ -43,7 +45,7 @@ public class HttpApiClient extends AbstractClient{
             }
         }
         URIBuilder builder = new URIBuilder(url);
-        if (queries != null){
+        if (queries != null) {
             for (Map.Entry<String, String> query : queries.entrySet()) {
                 builder.setParameter(query.getKey(), query.getValue());
             }
@@ -53,30 +55,22 @@ public class HttpApiClient extends AbstractClient{
         return createdUrl;
     }
 
-
-    public void buildHeaders(HttpRequest.Builder request, Map<String, String> headers){
-        for (Map.Entry<String, String> header : headers.entrySet()){
-            request.header(header.getKey(), header.getValue());
-        }
+    public void buildHeaders(HttpRequest.Builder request, Map<String, String> headers) {
+        headers.entrySet().forEach(header -> request.header(header.getKey(), header.getValue()));
     }
 
-    public void buildBody(Object jsonObject){
-        if(jsonObject != null){
-            JsonObject.setJsonObject(HttpRequest.BodyPublishers.ofString(parseToJson(jsonObject)));
-        }else {
-            JsonObject.setJsonObject(null);
-        }
+    public void buildBody(Object jsonObject) {
+        responseEntity.setJsonObject(jsonObject != null ? HttpRequest.BodyPublishers.ofString(parseToJson(jsonObject)) : null);
     }
 
     @Override
     public <T> BaseRequest doRequest(Object request, Method method, Class<T> clazz) {
         HttpRequest.Builder builderRequest = (HttpRequest.Builder) request;
         HttpResponse httpResponse = buildResponse(builderRequest, method);
-
         return deserializeObject(httpResponse, clazz);
     }
 
-    public <T> BaseRequest deserializeObject(HttpResponse httpResponse, Class<T> clazz){
+    public <T> BaseRequest deserializeObject(HttpResponse httpResponse, Class<T> clazz) {
         int statusCode = httpResponse.statusCode();
         List<HttpHeaders> headers = Arrays.asList(httpResponse.headers());
         String jsonFromResponse = httpResponse.body().toString();
@@ -87,16 +81,16 @@ public class HttpApiClient extends AbstractClient{
     }
 
     @SneakyThrows
-    public HttpResponse buildResponse(HttpRequest.Builder request, Method method){
-        switch (method){
+    public HttpResponse buildResponse(HttpRequest.Builder request, Method method) {
+        switch (method) {
             case POST:
-                request.POST(getJsonObject());
+                request.POST(responseEntity.getJsonObject());
                 break;
             case GET:
                 request.GET();
                 break;
             case PUT:
-                request.PUT(getJsonObject());
+                request.PUT(responseEntity.getJsonObject());
                 break;
             case DELETE:
                 request.DELETE();
@@ -109,16 +103,10 @@ public class HttpApiClient extends AbstractClient{
         return httpResponse;
     }
 
-    static class JsonObject {
-        private static HttpRequest.BodyPublisher jsonObject;
-
-        static HttpRequest.BodyPublisher getJsonObject() {
-            return jsonObject;
-        }
-
-        static void setJsonObject(HttpRequest.BodyPublisher jsonObject) {
-            JsonObject.jsonObject = jsonObject;
-        }
+    @Getter
+    @Setter
+    class ResponseEntity {
+        private HttpRequest.BodyPublisher jsonObject;
     }
 }
 
