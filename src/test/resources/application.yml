@@ -1,0 +1,14 @@
+configuration:
+  baseUrl: https://petstore.swagger.io/{type}
+  paths:
+    command: /{animal}
+    id: /{id}
+  valuesForPostAndPut:
+    type: v2
+    animal: pet
+  valuesForGetAndDelete:
+    type: v2
+    animal: pet
+    id: 10
+  headers:
+    content-type: application/json
